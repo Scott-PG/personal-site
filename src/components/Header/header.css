@@ -1,0 +1,47 @@
+header {
+  height: 137px;
+  width: 100%;
+  z-index: 1;
+  position: sticky;
+  top: -100px;
+}
+
+header h2 {
+  font-size: 1.25rem;
+}
+
+.header-text {
+  height: 99px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+nav {
+  padding: 3px 30px;
+}
+
+.navlinks {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navlinks li {
+  list-style: none;
+}
+
+.navlinks a {
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 3px;
+  font-size: 1.13rem;
+}
+
+@media (width <= 475px) {
+  nav {
+    padding: 3px 10px;
+  }
+}

@@ -1,21 +1,97 @@
 ---
+import Layout from "../layouts/BaseLayout.astro";
 
+type SkillGroup = {
+  title: string;
+  skillList: string[];
+};
+
+export const SKILL_GROUPS: SkillGroup[] = [
+  {
+    title: "Languages and APIs",
+    skillList: [
+      "JavaScript",
+      "Typescript",
+      "Go",
+      "Ruby",
+      "REST",
+      "GraphQL",
+      "gRPC",
+    ],
+  },
+  {
+    title: "Frontend",
+    skillList: [
+      "HTML",
+      "CSS",
+      "Sass/SCSS",
+      "JSS",
+      "React",
+      "Angular",
+      "Tailwind",
+      "Chakra",
+      "Bootstrap",
+      "Material UI",
+    ],
+  },
+  {
+    title: "Backend",
+    skillList: [
+      "Node.js",
+      "MongoDB",
+      "Express.js",
+      "Rails",
+      "SQL",
+      "PostgreSQL",
+    ],
+  },
+  {
+    title: "Tooling",
+    skillList: [
+      "Git",
+      "Github",
+      "Jest/RTL",
+      "Webpack",
+      "Buildkite",
+      "Fastly",
+      "Datadog",
+      "Google Cloud Provider",
+    ],
+  },
+  {
+    title: "Process",
+    skillList: [
+      "Agile/Scrum",
+      "CI/CD",
+      "Code review",
+      "Technical writing",
+      "Testing/TDD",
+      "Algorithms",
+      "Data structures",
+    ],
+  },
+  {
+    title: "Collaboration",
+    skillList: [
+      "Mentorship",
+      "Accessibility",
+      "Product derisking",
+      "Initiative planning",
+      "Project leadership",
+    ],
+  },
+];
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Scott Griffith</title>
-  </head>
-  <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
-    <h1>About Me</h1>
-    <p>Placeholder text</p>
-  </body>
-</html>
+<Layout pageTitle="About me">
+  <dl>
+    {
+      SKILL_GROUPS.map(({ title, skillList }) => (
+        <div>
+          <dt>{title}</dt>
+          <dd>{skillList.join(", ")}</dd>
+        </div>
+      ))
+    }
+  </dl>
+</Layout>

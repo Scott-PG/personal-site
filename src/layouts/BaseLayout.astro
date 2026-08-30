@@ -1,0 +1,26 @@
+---
+interface Props {
+  pageTitle: string;
+}
+
+import Header from "../components/Header/index.astro";
+import Footer from "../components/Footer/index.astro";
+import "../styles/global.css";
+const { pageTitle } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body class="app dark">
+    <Header />
+    <h1>{pageTitle}</h1>
+    <slot />
+    <Footer />
+  </body>
+</html>
