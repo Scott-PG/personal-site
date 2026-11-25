@@ -3,14 +3,9 @@ import BaseLayout from "../BaseLayout.astro";
 import "./markdown-post-layout.css";
 
 import type { MarkdownLayoutProps } from "astro";
+import type { CustomFrontmatter } from "./types";
 
-type Props = MarkdownLayoutProps<{
-  // Define frontmatter props here
-  title: string;
-  description?: string;
-  author?: string;
-  date: string;
-}>;
+type Props = MarkdownLayoutProps<CustomFrontmatter>;
 
 const { frontmatter } = Astro.props;
 
