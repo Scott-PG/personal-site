@@ -1,16 +1,27 @@
-.blog {
-  text-align: left;
+.frontmatter {
   margin: 1em auto;
   line-height: 1.7em;
-  padding: 24px;
+  padding: 0 1em;
   max-width: 800px;
+}
+
+.blog {
+  text-align: left;
+  margin: 0 auto 2em;
+  line-height: 1.7em;
+  padding: 0 1em;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 1.5em;
 
   h2,
   h3,
   h4,
   h5,
   p {
-    margin-top: 1.5em;
+    width: 100%;
   }
 
   ul {
@@ -21,7 +32,7 @@
   ol {
     padding-left: 2.5em;
     list-style-position: outside;
-    li {
+    li && ::not:first-of-type {
       margin-top: 0.75em;
     }
   }
@@ -33,6 +44,13 @@
   em,
   i {
     font-style: italic;
+  }
+
+  img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
   }
 
   blockquote {

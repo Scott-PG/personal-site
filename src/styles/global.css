@@ -67,6 +67,10 @@ h1 {
   color: var(--green);
 }
 
+.page-title {
+  margin-top: 1em;
+}
+
 header,
 footer {
   background: var(--accent-color);

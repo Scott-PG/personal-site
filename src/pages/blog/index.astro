@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/BaseLayout.astro";
-const allPosts = Object.values(import.meta.glob("./*.md", { eager: true }));
+const allPosts = Object.values(import.meta.glob("./*/*.md", { eager: true }));
 ---
 
 <Layout pageTitle="Blog">

@@ -12,7 +12,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^7.3.3"
+    "@astrojs/markdown-satteri": "^0.4.10",
+    "astro": "^7.4.13",
+    "satteri": "^0.10.5"
   },
   "devDependencies": {
     "eslint": "^10.8.1",

@@ -1,7 +1,7 @@
 ---
-interface Props {
-  pageTitle: string;
-}
+type Props = {
+  pageTitle?: string;
+};
 
 import Header from "../components/Header/index.astro";
 import Footer from "../components/Footer/index.astro";
@@ -19,7 +19,7 @@ const { pageTitle } = Astro.props;
   </head>
   <body class="app dark">
     <Header />
-    <h1>{pageTitle}</h1>
+    {pageTitle && <h1 class="page-title">{pageTitle}</h1>}
     <slot />
     <Footer />
   </body>

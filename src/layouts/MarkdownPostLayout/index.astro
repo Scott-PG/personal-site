@@ -1,13 +1,32 @@
 ---
 import BaseLayout from "../BaseLayout.astro";
 import "./markdown-post-layout.css";
+
+import type { MarkdownLayoutProps } from "astro";
+
+type Props = MarkdownLayoutProps<{
+  // Define frontmatter props here
+  title: string;
+  description?: string;
+  author?: string;
+  date: string;
+}>;
+
 const { frontmatter } = Astro.props;
+
+const formattedDate = new Date(frontmatter.date).toLocaleDateString("en-US", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <p><em>{frontmatter.description}</em></p>
-  <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
-  <p>Written by: {frontmatter.author}</p>
+  <div class="frontmatter">
+    <p><em>{frontmatter.description}</em></p>
+    <p>{formattedDate}</p>
+    <p>Written by: {frontmatter.author}</p>
+  </div>
   <div class="blog">
     <slot />
   </div>
